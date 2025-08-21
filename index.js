@@ -5,8 +5,8 @@ import authRoutes from "./routes/auth.js";
 import taskRoutes from "./routes/task.js";
 import categoryRoutes from "./routes/categories.js";
 dotenv.config();
-const app = express();
 
+const app = express();
 app.use(cors());
 app.use(express.json());
 

@@ -53,7 +53,10 @@ router.post("/register", async (req, res) => {
       html: `<p>Click to verify: <a href="${verifyUrl}">${verifyUrl}</a></p>`,
     });
 
-    res.json({ message: "Signup successful. Check your email to verify!" });
+    res.json({
+      message:
+        "Signup successful. Check your email to verify now you move to login page!",
+    });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
