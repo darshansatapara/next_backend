@@ -52,7 +52,12 @@ router.post("/register", async (req, res) => {
       subject: "Verify your email",
       html: `<p>Click to verify: <a href="${verifyUrl}">${verifyUrl}</a></p>`,
     });
-
+    await transporter.sendMail({
+      from: `"Task App" <${process.env.EMAIL_USER}>`,
+      to: user.email,
+      subject: "Welcome to Task App!",
+      html: `<p>successfully registered!</p>`,
+    });
     res.json({
       message:
         "Signup successful. Check your email to verify now you move to login page!",
