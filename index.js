@@ -9,11 +9,14 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://next-react-woad.vercel.app"], // allowed origins
+    origin: ["http://localhost:5173", "https://your-frontend-domain.com"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/", (req, res) => {
   res.send("Welcome to the Task Management API");
