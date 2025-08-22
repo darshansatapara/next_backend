@@ -11,6 +11,10 @@ app.use(
   cors({
     origin: ["https://next-react-woad.vercel.app", "http://localhost:5173"],
     credentials: true,
+    headers: {
+      "Access-Control-Allow-Origin": "https://next-react-woad.vercel.app",
+      "Access-Control-Allow-Credentials": true,
+    },
   })
 );
 app.use(express.json());
