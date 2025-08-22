@@ -10,6 +10,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use("/", (req, res) => {
+  res.send("Welcome to the Task Management API");
+});
 // routes
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
