@@ -43,7 +43,7 @@ router.post("/register", async (req, res) => {
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
       expiresIn: "1d",
     });
-    const verifyUrl = `http://localhost:5000/api/auth/verify/${token}`;
+    const verifyUrl = `${process.env.BACKEND_URL}/api/auth/verify/${token}`;
 
     // send email
     await transporter.sendMail({
