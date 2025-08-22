@@ -17,6 +17,9 @@ app.use(
 app.use(express.json());
 
 // routes
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 app.use("/api/categories", categoryRoutes);
