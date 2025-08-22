@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
-    origin: "https://next-react-woad.vercel.app",
+    origin: ["https://next-react-woad.vercel.app", "http://localhost:5173"],
     credentials: true,
   })
 );
