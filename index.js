@@ -7,7 +7,12 @@ import categoryRoutes from "./routes/categories.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://next-react-woad.vercel.app"], // allowed origins
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use("/", (req, res) => {
