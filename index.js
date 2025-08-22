@@ -10,17 +10,12 @@ const app = express();
 app.use(
   cors({
     origin: ["https://next-react-woad.vercel.app", "http://localhost:5173"],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"], // Allow these headers
     credentials: true,
   })
 );
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-app.use("/", (req, res) => {
-  res.send("Welcome to the Task Management API");
-});
 // routes
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
